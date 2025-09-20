@@ -2,7 +2,9 @@
 let FILE_API_KEY;
 try {
   FILE_API_KEY = require('../config').OPENAI_API_KEY;
-} catch (_) {}
+} catch (e) {
+  // No local config present; rely on environment variable.
+}
 
 // Prefer global fetch (Node 18+); fallback to dynamic import of node-fetch for CJS compatibility
 const fetchImpl = (typeof fetch === 'function')

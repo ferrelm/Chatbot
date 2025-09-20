@@ -1,5 +1,4 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
 
 # Block committing server code or config into public/
 if git diff --cached --name-only | grep -E '^public/(server\.js|openai\.js|config\.js)$' > /dev/null; then

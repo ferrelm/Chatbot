@@ -1,6 +1,7 @@
 {
   "env": {
-    "es2021": true
+    "es2021": true,
+    "node": true
   },
   "extends": ["eslint:recommended"],
   "parserOptions": {
@@ -18,6 +19,10 @@
         }],
         "no-alert": "warn"
       }
+    },
+    {
+      "files": ["scripts/**/*.js"],
+      "env": { "node": true }
     },
     {
       "files": ["server/**/*.js", "server.js"],
